@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Darshan - Jyotirlingas & Avatars</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="landing-screen">
+        <h1 class="main-title">Divine Darshan ॐ</h1>
+        <p class="subtitle">Gateway to the 12 Jyotirlingas & 10 Avatars</p>
+        
+        <div class="deities-row">
+            <div class="deity-intro">
+                <img src="images/Lord Ganesha.png" alt="Lord Ganesha">
+                <p>Lord Ganesha</p>
+            </div>
+            <div class="deity-intro">
+                <img src="images/Gemini_Generated_Image_livx34livx34livx.png" alt="Goddess Saraswati">
+                <p>Goddess Saraswati</p>
+            </div>
+            <div class="deity-intro">
+                <img src="images/Gemini_Generated_Image_27v9zi27v9zi27v9.png" alt="Goddess Mahalaxmi">
+                <p>Goddess Mahalaxmi</p>
+            </div>
+            <div class="deity-intro">
+                <img src="images/Gemini_Generated_Image_x0ctrix0ctrix0ct.png" alt="Shiva Parvati">
+                <p>Lord Shiva & Parvati</p>
+            </div>
+        </div>
+
+        <button id="enter-btn" onclick="enterSite()">Enter Divine Realm</button>
+        <p class="mantra-text">|| Om Namah Shivaya || Om Namo Bhagavate Vasudevaya ||</p>
+    </div>
+
+    <div id="app-screen" class="hidden">
+        <header>
+            <div class="header-content">
+                <h1>Divine Darshan</h1>
+                <button id="audio-toggle" onclick="toggleAudio()">🔊 Play Mantra</button>
+            </div>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('jyotirlinga')">12 Jyotirlingas</button>
+                <button class="tab-btn" onclick="switchTab('avatar')">10 Vishnu Avatars</button>
+            </div>
+        </header>
+
+        <main id="grid-container">
+            </main>
+    </div>
+
+    <div id="modal-overlay" class="hidden" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h2 id="modal-title">Temple Name</h2>
+            
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Deity Image">
+                    <p class="caption">Divine Form / Temple View</p>
+                </div>
+                <div class="modal-right">
+                    <p class="location-text"><strong>📍 Location:</strong> <span id="modal-location"></span></p>
+                    
+                    <h3>History & Significance</h3>
+                    <div class="desc-box">
+                        <p id="modal-desc"></p>
+                    </div>
+
+                    <h3>Nearby Temples</h3>
+                    <p id="modal-nearby"></p>
+
+                    <h3>Map View</h3>
+                    <iframe id="map-frame" src="" frameborder="0" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bg-audio" loop>
+        <source src="audio/kalsstockmedia-om-namah-shivaya-meditative-music-234720.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
